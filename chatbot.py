@@ -9,9 +9,9 @@ from langchain_community.retrievers import BM25Retriever
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_classic.retrievers import EnsembleRetriever
-from langchain.memory import ConversationBufferWindowMemory
-from langchain.chains import ConversationalRetrievalChain
-from langchain.cache import InMemoryCache
+from langchain_classic.memory import ConversationBufferWindowMemory
+from langchain_classic.chains import ConversationalRetrievalChain
+from langchain_classic.cache import InMemoryCache
 import langchain
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.callbacks import BaseCallbackHandler
