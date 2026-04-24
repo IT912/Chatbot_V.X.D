@@ -1,7 +1,6 @@
 streamlit
-langchain==0.3.23
 langchain-classic
-langchain-community==0.3.21
+langchain-community
 langchain-google-genai
 langchain-text-splitters
 faiss-cpu
