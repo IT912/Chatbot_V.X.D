@@ -12,7 +12,7 @@ from langchain_classic.retrievers import EnsembleRetriever
 from langchain_classic.memory import ConversationBufferWindowMemory
 from langchain_classic.chains import ConversationalRetrievalChain
 from langchain_classic.cache import InMemoryCache
-import langchain
+from langchain_core.caches import set_llm_cache
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.callbacks import BaseCallbackHandler
 from langchain_google_genai import ChatGoogleGenerativeAI  
@@ -23,7 +23,7 @@ st.set_page_config(page_title="Chatbot Tri Thức Riêng V.X.D", page_icon="🤖
 st.title("🤖 Chatbot Tri Thức Riêng - V.X.D (Gemini)")
 
 # Cache để tiết kiệm token
-langchain.llm_cache = InMemoryCache()
+set_llm_cache(InMemoryCache())
 
 # ----------------------------- KHỞI TẠO EMBEDDINGS -----------------------------
 if "embedding" not in st.session_state:

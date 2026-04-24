@@ -9,3 +9,4 @@ sentence-transformers
 python-dotenv
 pymupdf
 rank_bm25
+langchain-core
