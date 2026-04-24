@@ -187,24 +187,24 @@ if user_input := st.chat_input("Hỏi tôi về tài liệu của bạn..."):
         message_placeholder = st.empty()
         full_response = ""
 
-        # Streaming (Gemini hỗ trợ streaming đơn giản)
-        # Vì ConversationalRetrievalChain không hỗ trợ stream trực tiếp, ta dùng callback
         class GeminiStreamCallback(BaseCallbackHandler):
             def __init__(self, placeholder):
                 self.placeholder = placeholder
                 self.text = ""
+
             def on_llm_new_token(self, token: str, **kwargs) -> None:
                 self.text += token
-                self.placeholder.markdown(self.text + "▌")
+                # Dùng write thay vì markdown để tránh lỗi DOM
+                self.placeholder.write(self.text)
 
         stream_handler = GeminiStreamCallback(message_placeholder)
-        # Tạo chain với callback stream
-        # Cách đơn giản: dùng combine_docs_chain trực tiếp
+
         response = st.session_state.chain.invoke(
             {"question": user_input},
             callbacks=[stream_handler]
         )
         answer = response["answer"]
+        # Render lại bằng markdown (tùy chọn)
         message_placeholder.markdown(answer)
         full_response = answer
 
