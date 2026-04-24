@@ -36,7 +36,7 @@ embedding = st.session_state.embedding
 # ----------------------------- THAM SỐ -----------------------------
 FAISS_PATH = "faiss_index"
 SPLITS_PATH = "splits.pkl"
-REBUILD = False  # Đặt True nếu tạo lại index
+REBUILD = True  # Đặt True nếu tạo lại index
 
 # ----------------------------- TẢI / TẠO VECTORSTORE VÀ SPLITS -----------------------------
 if not REBUILD:
