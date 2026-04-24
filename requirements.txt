@@ -1,9 +1,10 @@
 streamlit
-langchain
-langchain-core
-langchain-community
-langchain-google-genai
-langchain-text-splitters
+langchain==0.3.23
+langchain-classic==1.0.0
+langchain-core==0.3.84
+langchain-community==0.3.21
+langchain-google-genai==2.1.5
+langchain-text-splitters==0.3.11
 faiss-cpu
 sentence-transformers
 python-dotenv
