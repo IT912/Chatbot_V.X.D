@@ -10,3 +10,9 @@ sentence-transformers
 python-dotenv
 pymupdf
 rank_bm25
+# Giới hạn phiên bản transformers để tránh bug import zoedepth
+transformers==4.35.0
+
+# Cài đặt torch và torchvision cho môi trường CPU để tiết kiệm dung lượng
+torch==2.0.1
+torchvision==0.15.1
